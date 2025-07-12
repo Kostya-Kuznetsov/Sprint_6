@@ -1,6 +1,6 @@
 # Automated test suite for [Yandex Scooter](https://qa-scooter.praktikum-services.ru/) service
 
-## Стек
+## Stack
 
 - Python 3.11.1  
 - Pytest — фреймворк для тестирования  
