@@ -16,8 +16,8 @@ class OrderPage(BasePage):
         self.click_on_element(OrderPageLocators.select_item_in_dropdown_metro)
 
     @allure.step('Ввод даты заказа в поле "Когда привезти самокат"')
-    def send_keys_date_by_keyboard_input(self):
-        self.send_keys_to_field(OrderPageLocators.field_date, TestData.test_data_user1[5])
+    def send_keys_date_by_keyboard_input(self, date_value):
+        self.send_keys_to_field(OrderPageLocators.field_date, date_value)
 
     @allure.step('Клик по выбранной дате в выпадающем календаре начала аренды')
     def click_date_in_calendar(self):
@@ -48,7 +48,7 @@ class OrderPage(BasePage):
     def data_entry_second_form(self, test_data):
         self.wait_visibility_of_element(OrderPageLocators.field_date)
         self.click_on_element(OrderPageLocators.field_date)
-        self.send_keys_to_field(OrderPageLocators.field_date, test_data[5])
+        self.send_keys_date_by_keyboard_input(test_data[5])
         self.click_on_element(OrderPageLocators.checkbox_grey_color_scooter)
         self.click_on_element(OrderPageLocators.field_rental_period)
         self.click_on_element(OrderPageLocators.dropdown_item_rental_period)
